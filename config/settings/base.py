@@ -132,7 +132,6 @@ LOGOUT_REDIRECT_URL = '/'
 
 
 # 로깅설정
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
