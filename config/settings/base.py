@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../../db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -122,10 +122,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '../../static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
-# 로그인 성공 후 이동하는 URL
+# 로그인/로그아웃 성공후 이동하는 URL
 LOGIN_REDIRECT_URL = '/'
-# 로그아웃 성공 후 이동하는 URL
 LOGOUT_REDIRECT_URL = '/'
