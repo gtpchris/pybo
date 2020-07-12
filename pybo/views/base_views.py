@@ -13,6 +13,7 @@ def index(request):
     """
     pybo 목록 출력
     """
+    3/0  # 강제로 오류발생
     # 입력 파라미터
     page = request.GET.get('page','1')      # 페이지
     kw = request.GET.get('kw', '')          # 검색어
