@@ -47,3 +47,7 @@ def detail(request, question_id):
     context = {'question': question}
     return render(request, 'pybo/question_detail.html', context)
 
+
+def index(request):
+    # ---------------------------------------- [edit] ---------------------------------------- #
+    3/0  # 강제로 오류발생
