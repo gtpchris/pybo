@@ -48,6 +48,9 @@ def detail(request, question_id):
     return render(request, 'pybo/question_detail.html', context)
 
 
+import logging
+logger = logging.getLogger('pybo')
+
 def index(request):
     # ---------------------------------------- [edit] ---------------------------------------- #
-    3/0  # 강제로 오류발생
+    logger.info("INFO 레벨로 출력")
