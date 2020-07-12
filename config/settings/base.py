@@ -149,10 +149,10 @@ LOGGING = {
             '()': 'django.utils.log.ServerFormatter',
             'format': '[{server_time}] {message}',
             'style': '{',
-        }
-    },
-    'standard': {
-        'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
     },
     'handlers': {
         'console': {
@@ -178,7 +178,7 @@ LOGGING = {
             'maxBytes': 1024*1024*5,  # 5 MB
             'backupCount': 5,
             'formatter': 'standard',
-        }
+        },
     },
     'loggers': {
         'django': {
@@ -189,6 +189,10 @@ LOGGING = {
             'handlers': ['django.server'],
             'level': 'INFO',
             'propagate': False,
+        },
+        'pybo': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
         },
     }
 }
