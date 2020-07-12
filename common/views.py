@@ -32,4 +32,4 @@ def server_error(request, exception):
     """
     500 Server error
     """
-    return render(request, 'common/500.html', {})
+    return render(request, 'common/500.html', {}, status=500)
