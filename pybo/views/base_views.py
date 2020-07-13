@@ -21,27 +21,27 @@ def index(request):
     so = request.GET.get('so', 'recent')    # 정렬기준
 
     # 정렬
-    if so =='recommend':
+    if so == 'recommend':
         question_list = Question.objects.annotate(num_voter=Count('voter')).order_by('-num_voter', '-create_date')
     elif so == 'popular':
         question_list = Question.objects.annotate(num_answer=Count('answer')).order_by('-num_answer', '-create_date')
-    else: # recent
+    else:  # recent
         question_list = Question.objects.order_by('-create_date')
 
     # 검색
     if kw:
         question_list = question_list.filter(
-            Q(subject__icontains=kw) | # 제목검색,   subject__contains=kw 대신 subject__icontains=kw을 사용하면 대소문자를 가리지 않고 찾아준다.
-            Q(content__icontains=kw) | # 내용검색
-            Q(author__username__icontains=kw) | # 질문 글쓴이검색
-            Q(answer__author__username__icontains=kw) # 답변 글쓴이검색
+            Q(subject__icontains=kw) |  # 제목검색
+            Q(content__icontains=kw) |  # 내용검색
+            Q(author__username__icontains=kw) |  # 질문 글쓴이검색
+            Q(answer__author__username__icontains=kw)  # 답변 글쓴이검색
         ).distinct()
 
     # 페이징처리
-    paginator = Paginator(question_list, 10)    # 페이지당 10개씩 보여주기
+    paginator = Paginator(question_list, 10)  # 페이지당 10개씩 보여주기
     page_obj = paginator.get_page(page)
 
-    context = {'question_list': page_obj, 'page': page, 'kw': kw, 'so': so} # page, kw, so가 추가되었다.
+    context = {'question_list': page_obj, 'page': page, 'kw': kw, 'so': so}  # <------ so 추가
     return render(request, 'pybo/question_list.html', context)
 
 

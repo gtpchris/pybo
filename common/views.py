@@ -1,7 +1,8 @@
-from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-from common.forms import UserForm
+
+from .forms import UserForm
+
 
 def signup(request):
     """
@@ -26,4 +27,5 @@ def page_not_found(request, exception):
     404 Page not found
     """
     return render(request, 'common/404.html', {})
+
 
