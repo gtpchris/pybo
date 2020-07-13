@@ -23,3 +23,5 @@ urlpatterns = [
     path('common/', include('common.urls')), # http://localhost:8000/common/ 으로 시작하는 URL은 common/urls.py를 참조
     path('', base_views.index, name='index'),  # '/' 에 해당되는 path
 ]
+
+handler404 = 'common.views.page_not_found'
