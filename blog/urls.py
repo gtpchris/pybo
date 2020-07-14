@@ -1,7 +1,9 @@
+import logging
+
 from django.urls import path, re_path
 
 from blog import views
-import logging
+
 logger = logging.getLogger(__name__)
 
 app_name = 'blog'

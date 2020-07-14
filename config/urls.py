@@ -15,15 +15,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from pybo.views import base_views
+from config.views import HomeView
+# from pybo.views import base_views
 
+import logging
+logger = logging.getLogger(__name__)
+
+logger.info("config urlpatterns 진입")
 urlpatterns = [
-    path('', base_views.index, name='index'),  # '/' 에 해당되는 path
+    path('', HomeView.as_view(), name='home'),  # '/' 에 해당되는 path
     path('admin/', admin.site.urls),
-    path('pybo/', include('pybo.urls')),
     path('common/', include('common.urls')),  # http://localhost:8000/common/ 으로 시작하는 URL은 common/urls.py를 참조
+    path('pybo/', include('pybo.urls')),
     path('bookmark/', include('bookmark.urls')),
     path('blog/', include('blog.urls')),
 ]
 
-handler404 = 'common.views.page_not_found'
+# handler404 = 'common.views.page_not_found'

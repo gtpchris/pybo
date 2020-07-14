@@ -4,9 +4,9 @@ from bookmark.views import BookmarkLV, BookmarkDV
 import logging
 logger = logging.getLogger(__name__)
 
-app_name = 'blog'
+app_name = 'bookmark'
 
-logger.info("blog urlpatterns 진입")
+logger.info("bookmark urlpatterns 진입")
 
 urlpatterns = [
 
