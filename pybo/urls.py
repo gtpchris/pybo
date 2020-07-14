@@ -1,11 +1,15 @@
 from django.urls import path
 
 from .views import base_views, question_views, answer_views, comment_views, vote_views
+import logging
+logger = logging.getLogger(__name__)
 
 app_name = 'pybo'
 
+logger.info("pybo urls.py 진입")
+
 urlpatterns = [
-    # base_views.py
+    # views.py
     path('', base_views.index, name='index'),
     path('<int:question_id>/', base_views.detail, name='detail'),
 

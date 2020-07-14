@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bookmark.apps.BookmarkConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +127,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+#STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
 
 # 로그인/로그아웃 성공후 이동하는 URL
 LOGIN_REDIRECT_URL = '/'
@@ -189,6 +193,14 @@ LOGGING = {
             'propagate': False,
         },
         'pybo': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+        'bookmark': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+        'blog': {
             'handlers': ['console', 'file'],
             'level': 'INFO',
         },
