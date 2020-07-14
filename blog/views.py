@@ -34,6 +34,7 @@ class PostYAV(YearArchiveView):
 
 
 class PostMAV(MonthArchiveView):
+    logger.info('PostMAV 진입1')
     model = Post
     date_field = 'modify_dt'
 

@@ -22,13 +22,6 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        logger.info('get_absolute_url 진입')
-        logger.info('get_absolute_url 진입 :1 self :::')  #slug sdfsdfs
-        logger.info('get_absolute_url 진입 :2 self.slug'+ str(self.slug))  #slug sdfsdfs
-        logger.info('get_absolute_url 진입 :3 self.slug'+ self.slug)  #slug sdfsdfs
-        # logger.info('get_absolute_url 진입 :4 '+ self.get())  #slug sdfsdfs
-        logger.info('get_absolute_url 진입 :5 '+ self.slug)  #slug sdfsdfs
-        logger.info('get_absolute_url 진입 :6 '+ self.Post)  #slug sdfsdfs
         return reverse('blog:post_detail', args=(self.slug,))
 
     def get_previous(self):

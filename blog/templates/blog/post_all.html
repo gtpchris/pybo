@@ -2,8 +2,9 @@
 <br>
 
 {% for post in posts %}
-    {{ post.get_absolute_url }}
-
+    <h3><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h3>
+    {{ post.modify_dt|date:"N d, Y" }}
+    <p>{{ post.description }}</p>
 {% endfor %}
 
 <br>
