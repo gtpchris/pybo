@@ -6,8 +6,6 @@ logger = logging.getLogger(__name__)
 
 app_name = 'pybo'
 
-logger.info("pybo urlpatterns 진입")
-
 urlpatterns = [
     # base_views.py
     path('', base_views.index, name='index'),

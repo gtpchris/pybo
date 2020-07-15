@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic import ArchiveIndexView, YearArchiveView, MonthArchiveView
 from django.views.generic import DayArchiveView, TodayArchiveView
 from django.views.generic import ListView, DetailView, TemplateView
+from django.conf import settings
 
 from blog.models import Post
 
@@ -19,6 +20,14 @@ class PostLV(ListView):
 #--- DetailView
 class PostDV(DetailView):
     model = Post
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['disqus_short'] = f"{settings.DISQUS_SHORTNAME}"
+        context['disqus_id'] = f"post-{self.object.id}-{self.object.slug}"
+        context['disqus_url'] = f"{settings.DISQUS_MY_DOMAIN}{self.object.get_absolute_url()}"
+        context['disqus_title'] = f"{self.object.slug}"
+        return context
 
 
 #--- ArchiveView

@@ -227,4 +227,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 TAGGIT_CASE_INSENSITIVE = True
-TAGGIT_LIMIT = 50
+TAGGIT_LIMIT = 50   # default=10
+
+DISQUS_SHORTNAME = 'gglabs-kr'
+DISQUS_MY_DOMAIN = 'http://15.164.255.161:8000'

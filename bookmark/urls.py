@@ -6,8 +6,6 @@ logger = logging.getLogger(__name__)
 
 app_name = 'bookmark'
 
-logger.info("bookmark urlpatterns 진입")
-
 urlpatterns = [
 
     # class-based views

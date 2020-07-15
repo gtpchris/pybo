@@ -8,8 +8,6 @@ logger = logging.getLogger(__name__)
 
 app_name = 'blog'
 
-logger.info("blog urlpatterns 진입")
-
 urlpatterns = [
 
     # Example: /blog/
