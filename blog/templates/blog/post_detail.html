@@ -6,7 +6,7 @@
 .post-body {
     width: 80%;
     margin: auto;
-    font-family: "Lucida Grande", "Verdana", "Arial", "sans-serif";
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
     font-size: 16px;
 }
 </style>
@@ -30,7 +30,7 @@
         {% endif %}
     </p>
 
-    <p>{{ object.modify_dt|date:"j F Y" }}</p>
+    <div>{{ object.modify_dt|date:"j F Y" }}</div>
     <br>
 
     <div>
@@ -62,14 +62,14 @@
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
     var disqus_config = function () {
-    this.page.url = '{{ disqus_url }}  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = '{{ disqus_id }}''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    this.page.title = '{{ disqus_title }}'
+    this.page.url = '{{ disqus_url }}';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = '{{ disqus_id }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.page.title = '{{ disqus_title }}';
     };
 
     (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
-        s.src = 'https://gglabs-kr.disqus.com/embed.js';
+        s.src = 'https://{{ disqus_short }}.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
