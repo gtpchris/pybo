@@ -1,10 +1,14 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic import ArchiveIndexView, YearArchiveView, MonthArchiveView
 from django.views.generic import DayArchiveView, TodayArchiveView
-from django.views.generic import ListView, DetailView, TemplateView
 from django.conf import settings
 
 from blog.models import Post
+
+from django.views.generic import FormView
+from blog.forms import PostSearchForm
+from django.db.models import Q
+from django.shortcuts import render
 
 import logging
 logger = logging.getLogger(__name__)
@@ -74,3 +78,22 @@ class TaggedObjectLV(ListView):
         context['tagname'] = self.kwargs['tag']
         return context
 
+
+#--- FormView
+class SearchFormView(FormView):
+    form_class = PostSearchForm
+    template_name = 'blog/post_search.html'
+
+    def form_valid(self, form):
+        searchWord = form.cleaned_data['search_word']
+        post_list = Post.objects.filter(Q(title__icontains=searchWord)|
+                                        Q(description__icontains=searchWord)|
+                                        Q(content__icontains=searchWord)
+                                        ).distinct()
+
+        context = {'form': form,
+                   'search_term': searchWord,
+                   'object_list': post_list
+        }
+
+        return render(self.request, self.template_name, context)   # No redirection  보통은 form_valid()후 HttpResponseRedirect 객체를 반환하나, 여기서는 HttpResponse 반환
