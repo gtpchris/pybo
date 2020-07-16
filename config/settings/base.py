@@ -33,19 +33,23 @@ ALLOWED_HOSTS = ['15.164.255.161']
 # Application definition
 
 INSTALLED_APPS = [
-    'common.apps.CommonConfig',
-    'pybo.apps.PyboConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bookmark.apps.BookmarkConfig',
-    'blog.apps.BlogConfig',
+
     'taggit.apps.TaggitAppConfig',  #6장 태그 추가
     'taggit_templatetags2',         #6장 태그 추가
+    'widget_tweaks',
 
+    'pybo.apps.PyboConfig',
+    'common.apps.CommonConfig',
+
+    'bookmark.apps.BookmarkConfig',
+    'blog.apps.BlogConfig',
+    # 'photo.apps.PhotoConfig', # 생략
 ]
 
 MIDDLEWARE = [
@@ -140,15 +144,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 #STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 
 # 로그인/로그아웃 성공후 이동하는 URL
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TAGGIT_CASE_INSENSITIVE = True
+TAGGIT_LIMIT = 50   # default=10
+
+DISQUS_SHORTNAME = 'gglabs-kr'
+DISQUS_MY_DOMAIN = 'http://15.164.255.161:8000'
 
 # 로깅설정
 LOGGING = {
@@ -222,12 +233,3 @@ LOGGING = {
         },
     }
 }
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-TAGGIT_CASE_INSENSITIVE = True
-TAGGIT_LIMIT = 50   # default=10
-
-DISQUS_SHORTNAME = 'gglabs-kr'
-DISQUS_MY_DOMAIN = 'http://15.164.255.161:8000'
