@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
-    # 'photo.apps.PhotoConfig', # 생략
+    'photo.apps.PhotoConfig',
 ]
 
 MIDDLEWARE = [
