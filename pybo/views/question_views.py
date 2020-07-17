@@ -7,7 +7,7 @@ from ..forms import QuestionForm
 from ..models import Question
 
 
-@login_required(login_url='resistration:login')
+@login_required(login_url='registration:login')
 def question_create(request):
     """
     pybo 질문등록
@@ -26,7 +26,7 @@ def question_create(request):
     return render(request, 'pybo/question_form.html', context)
 
 
-@login_required(login_url='resistration:login')
+@login_required(login_url='registration:login')
 def question_modify(request, question_id):
     """
     pybo 질문수정
@@ -50,7 +50,7 @@ def question_modify(request, question_id):
     return render(request, 'pybo/question_form.html', context)
 
 
-@login_required(login_url='resistration:login')
+@login_required(login_url='registration:login')
 def question_delete(request, question_id):
     """
     pybo 질문삭제
