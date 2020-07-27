@@ -4,3 +4,7 @@ db.sqlite3
 __pycache__
 logs
 media
+SQLscripts
+/db.sqlite3-journal
+inspection
+_mac

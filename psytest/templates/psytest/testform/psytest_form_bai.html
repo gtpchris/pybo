@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}psytest_form.html{% endblock %}
+{% block content %}
+    <!-- test_id = 1 -->
+    <h1>BAI TEST</h1>
+
+    <form action="{% url 'psytest:detail' testsheet=item.id %}" method="post">
+        {% csrf_token %}
+        <table class="table table-bordered table-condensed table-striped">
+            <thead>
+            <tr>
+                <td>수검자 이름 : </td>
+                <td>{{ form.client_nm }}</td>
+                <td>수검자 생년월일 : </td>
+                <td>{{ form.birth_dt }}</td>
+                <td>검사일시 : </td>
+                <td>{{ form.test_dt }}</td>
+            </tr>
+            </thead>
+        </table>
+        <table class="table table-bordered table-condensed table-striped">
+            <tr>
+                <td>0) 나는 불안하지 않다.</td>
+                <td rowspan="5" style="width: 15%">응답 1 : {{ form.a1 }}</td>
+            </tr>
+            <tr>
+                <td>1) 나는 슬프다. </td>
+            </tr>
+            <tr>
+                <td>2) 나는 항상 슬퍼서 그 것을 떨쳐버릴 수 없다.</td>
+            </tr>
+            <tr>
+                <td>3) 나는 너무나 슬프고 불행해서 도저히 견딜 수 없다.</td>
+            </tr>
+            <tr><td></td></tr>
+            <tr>
+                <td>0) 나는 앞날에 대해서 별로 낙심하지 않는다</td>
+                <td rowspan="5" style="width: 15%">응답 2 : {{ form.a2 }}</td>
+            </tr>
+            <tr>
+                <td>1) 나는 앞날에대해 비관적인 느낌이든다. </td>
+            </tr>
+            <tr>
+                <td>2) 나는 앞날에 대해 기대할 것이 아무것도 없다고 느낀다.</td>
+            </tr>
+            <tr>
+                <td>3) 나의 앞날은 아주 절망적이고 나아질 가능성이 없다고 느낀다.</td>
+            </tr>
+            <tr><td></td></tr>
+            <tr>
+                <td>0)나는 실패자라고 느끼지 않는다. </td>
+                <td rowspan="5" style="width: 15%">응답 3 : {{ form.a3 }}</td>
+            </tr>
+            <tr>
+                <td>1) 나는 보통 사람들보다 더 많이 실패한 것 같다.</td>
+            </tr>
+            <tr>
+                <td>2) 내가 살아온 과거를 뒤돌아보면, 생각나는 것은 실패뿐이다.</td>
+            </tr>
+            <tr>
+                <td>3) 나는 인간으로서 완전한 실패자인 것 같다.</td>
+            </tr>
+            <tr><td></td></tr>
+        </table>
+        <input type="hidden" name="psytestsheet" id="id_psytestsheet" value="{{ item.id }}">
+        <button type="submit" value="검사완료" class="btn btn-info"></button>
+    </form>
+{% endblock %}

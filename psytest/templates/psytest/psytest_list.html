@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}psytest_list.html{% endblock %}
+
+{% block content %}
+    <h1>심리검사 목록</h1>
+    <ul>
+        <table class="table table-bordered table-condensed table-striped">
+            <thead>
+            <tr class="table-primary">
+                <th>검사ID</th>
+                <th>검사</th>
+                <th>상세</th>
+                <th>규준연령</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+
+                <tbody>
+                {% for test in psytestsheets %}
+                    <tr>
+                        <td><a>{{ test.id }}</a></td>
+                        <td><a>{{ test.psytest_nm }}</a> </td>
+                        <td><a>{{ test.description }}</a> </td>
+                        {% if test.start_age < 1 %}
+                            <td>제한없음</td>
+                        {% else %}
+                            <td>{{ test.start_age }} - {{ test.end_age }}</td>
+                        {% endif %}
+                        <td><a href="{% url 'psytest:detail' testsheet=test.id %}">검사하기</a></td>
+                        <td><a href="{% url 'psytest:detailList' testsheet=test.id %}">조회하기</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+    </ul>
+{% endblock %}

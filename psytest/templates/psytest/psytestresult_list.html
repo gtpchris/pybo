@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}psytestresult_list.html{% endblock %}
+
+{% block content %}
+    <h1>심리검사 결과 목록</h1>
+    <ul>
+        <table class="table table-bordered table-condensed table-striped">
+            <thead>
+            <tr class="table-primary">
+                <th>순번</th>
+                <th>이름</th>
+                <th>생년월일</th>
+                <th>검사일</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for psytestresult in object_list %}
+                <tr>
+                    <td><a href="">{{ psytestresult.id }}</a> </td>
+                    <td><a href="">{{ psytestresult.client_nm }}</a> </td>
+                    <td><a href="">{{ psytestresult.birth_dt }}</a> </td>
+                    <td><a href="">{{ psytestresult.test_dt }}</a> </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </ul>
+{% endblock %}
