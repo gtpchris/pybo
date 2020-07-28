@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}SEI 검사하기{% endblock %}
+{% block content %}
+    <!-- test_id = 3 -->
+    <h1>SEI 자아존중감 척도</h1>
+
+    <form action="{% url 'psytest:detail' testsheet=item.id %}" method="post" class="my-3">
+        {% csrf_token %}
+        <div class="container my-3">
+            <table class="table">
+                <thead>
+                <tr class="thead-dark">
+                    <td>수검자 이름 : </td>
+                    <td>{{ form.client_nm }}</td>
+                    <td>수검자 생년월일 : </td>
+                    <td>{{ form.birth_dt }}</td>
+                    <td>검사일시 : </td>
+                    <td>{{ form.test_dt }}</td>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div>
+            <table class="table table-bordered table-striped">
+                <div>
+                    <tr><td><p>{{ item.q1 }}</p></td><td style="width: 15%">응답 1 : {{ form.a1 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q2 }}</p></td><td style="width: 15%">응답 2 : {{ form.a2 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q3 }}</p></td><td style="width: 15%">응답 3 : {{ form.a3 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q4 }}</p></td><td style="width: 15%">응답 4 : {{ form.a4 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q5 }}</p></td><td style="width: 15%">응답 5 : {{ form.a5 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q6 }}</p></td><td style="width: 15%">응답 6 : {{ form.a6 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q7 }}</p></td><td style="width: 15%">응답 7 : {{ form.a7 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q8 }}</p></td><td style="width: 15%">응답 8 : {{ form.a8 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q9 }}</p></td><td style="width: 15%">응답 9 : {{ form.a9 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q10 }}</p></td><td style="width: 15%">응답 10 : {{ form.a10 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q11 }}</p></td><td style="width: 15%">응답 11 : {{ form.a11 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q12 }}</p></td><td style="width: 15%">응답 12 : {{ form.a12 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q13 }}</p></td><td style="width: 15%">응답 13 : {{ form.a13 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q14 }}</p></td><td style="width: 15%">응답 14 : {{ form.a14 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q15 }}</p></td><td style="width: 15%">응답 15 : {{ form.a15 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q16 }}</p></td><td style="width: 15%">응답 16 : {{ form.a16 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q17 }}</p></td><td style="width: 15%">응답 17 : {{ form.a17 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q18 }}</p></td><td style="width: 15%">응답 18 : {{ form.a18 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q19 }}</p></td><td style="width: 15%">응답 19 : {{ form.a19 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q20 }}</p></td><td style="width: 15%">응답 20 : {{ form.a20 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q21 }}</p></td><td style="width: 15%">응답 21 : {{ form.a21 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q22 }}</p></td><td style="width: 15%">응답 22 : {{ form.a22 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q23 }}</p></td><td style="width: 15%">응답 23 : {{ form.a23 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q24 }}</p></td><td style="width: 15%">응답 24 : {{ form.a24 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q25 }}</p></td><td style="width: 15%">응답 25 : {{ form.a25 }}</td></tr>
+                    <tr><td>{{ item.q1_1 }}</td></tr>
+                    <tr><td>{{ item.q1_2 }}</td></tr>
+                </div>
+            </table>
+        </div>
+        <input type="hidden" name="psytestsheet" id="id_psytestsheet" value="{{ item.id }}">
+        <input type="submit" value="검사완료" class="btn btn-primary"></input>
+    </form>
+    <!-- 뷰 제이에스 cdn -->
+    <!-- 차트 영역 시작-->
+    <div width="30" height="60"><canvas id="chart" ></canvas></div>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+        var calcVar = 0;
+        var posiVar = 0;
+        var negaVar = 0;
+
+        posiVar = ({{ form.a1 }}
+                + {{ form.a2 }}
+                + {{ form.a3 }}
+                + {{ form.a6 }}
+                + {{ form.a7 }}
+                + {{ form.a11 }}
+                + {{ form.a12 }}
+                + {{ form.a14 }}
+                + {{ form.a15 }}
+                + {{ form.a16 }}
+                + {{ form.a18 }}
+                + {{ form.a19 }}
+                + {{ form.a21 }}
+                + {{ form.a24 }}
+                + {{ form.a25 }});
+
+        negaVar =  ((3 - {{ form.a4 }}) //역채점 문항 합
+                  +(3 - {{ form.a5 }})
+                  +(3 - {{ form.a8 }})
+                  +(3 - {{ form.a9 }})
+                  +(3 - {{ form.a10 }})
+                  +(3 - {{ form.a13 }})
+                  +(3 - {{ form.a17 }})
+                  +(3 - {{ form.a20 }})
+                  +(3 - {{ form.a22 }})
+                  +(3 - {{ form.a23 }}));
+        calcVar = posiVar + negaVar;
+
+
+    </script>
+    <script type="text/javascript">
+        var barChartData = {
+            labels: ["자아존중감"],
+            datasets: [{
+                label: '검사결과',
+                backgroundColor: "#1E90FF",
+                data: [
+                    calcVar,
+                ]
+            }, {
+                label: '비교',
+                backgroundColor: "#f7464a",
+                data: [
+                    25,
+                ]
+            }]
+        };
+        window.onload = function() {
+            var ctx = $('#chart').get(0).getContext("2d");
+            window.theChart = new Chart(ctx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+
+                }
+            });
+        }
+    </script>
+<!-- 차트 영역 끝-->
+
+{% endblock %}
