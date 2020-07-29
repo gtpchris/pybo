@@ -51,10 +51,6 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline my-2" action="" method="post"> {% csrf_token %}
-            <input class="form-control mr-sm-2" type="search" placeholder="global search" name="search_word">
-        </form>
-
         <ul class="navbar-nav ml-5 mr-5">
             <li class="nav-item dropdown mx-1 btn btn-primary">
                 {% if user.is_active %}
