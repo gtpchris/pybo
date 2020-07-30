@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}psytest_detail_list.html{% endblock %}
+
+{% block content %}
+    <h1>심리검사 실시 목록</h1>
+    <ul>
+        <table class="table table-bordered table-condensed table-striped">
+            <thead>
+            <tr class="table-primary">
+                <th>검사일자</th>
+                <th>수검자 이름</th>
+                <th>수검자 생년월일</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for test in detailList %}
+                <tr>
+                    <td><a>{{ test.test_dt }}</a></td>
+                    <td><a href="{% url 'psytest:testCase' testCaseId=test.id testsheet=item.id %}">{{ test.client_nm }}</a> </td>
+                    <td><a>{{ test.birth_dt }}</a> </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <input type="hidden" name="psytestsheet" id="id_psytestsheet" value="{{ item.id }}">
+    </ul>
+{% endblock %}

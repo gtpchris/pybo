@@ -13,6 +13,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
 from config.views import HomeView, UserCreateView, UserCreateDoneTV
@@ -29,13 +30,21 @@ urlpatterns = [
     path('pybo/', include('pybo.urls')),
     path('bookmark/', include('bookmark.urls')),
     path('blog/', include('blog.urls')),
+    path('photo/', include('photo.urls')),
+    path('psytest/', include('psytest.urls')),
     # path('photo/', include('photo.urls')),    # 생략
 
     # 사용자 앱이 아닌 django.contrib.auth.urls 에서 구현된것 사용
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register/', UserCreateView.as_view(), name='register'),
     path('accounts/register/done/', UserCreateDoneTV.as_view(), name='register_done'),
-    path('photo/', include('photo.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
+
 
 # handler404 = 'common.views.page_not_found'

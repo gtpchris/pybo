@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
 
     'taggit.apps.TaggitAppConfig',  #6장 태그 추가
     'taggit_templatetags2',         #6장 태그 추가
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
     'photo.apps.PhotoConfig',
+    'psytest.apps.PsytestConfig',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +62,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
+INTERNAL_IPS = ('127.0.0.1')
 
 ROOT_URLCONF = 'config.urls'
 
@@ -228,6 +232,10 @@ LOGGING = {
             'level': 'INFO',
         },
         'blog': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+        'psytest': {
             'handlers': ['console', 'file'],
             'level': 'INFO',
         },

@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}TSCC 검사하기{% endblock %}
+{% block content %}
+    <!-- test_id = 4 -->
+    <h1>TSCC 아동용 외상 증상 검사</h1>
+
+    <form action="{% url 'psytest:detail' testsheet=item.id %}" method="post" class="my-3">
+        {% csrf_token %}
+        <div class="container my-3">
+            <table class="table">
+                <thead>
+                <tr class="thead-dark">
+                    <td>수검자 이름 : </td>
+                    <td>{{ form.client_nm }}</td>
+                    <td>수검자 생년월일 : </td>
+                    <td>{{ form.birth_dt }}</td>
+                    <td>검사일시 : </td>
+                    <td>{{ form.test_dt }}</td>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div>
+            <table class="table table-bordered table-striped">
+                <div>
+                    <tr><td><p>{{ item.q1 }}</p></td><td style="width: 25%">응답 1 : {{ form.a1 }}</td></tr>
+                </div>`
+                <div>
+                    <tr><td><p>{{ item.q2 }}</p></td><td style="width: 25%">응답 2 : {{ form.a2 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q3 }}</p></td><td style="width: 25%">응답 3 : {{ form.a3 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q4 }}</p></td><td style="width: 25%">응답 4 : {{ form.a4 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q5 }}</p></td><td style="width: 25%">응답 5 : {{ form.a5 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q6 }}</p></td><td style="width: 25%">응답 6 : {{ form.a6 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q7 }}</p></td><td style="width: 25%">응답 7 : {{ form.a7 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q8 }}</p></td><td style="width: 25%">응답 8 : {{ form.a8 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q9 }}</p></td><td style="width: 25%">응답 9 : {{ form.a9 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q10 }}</p></td><td style="width: 25%">응답 10 : {{ form.a10 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q11 }}</p></td><td style="width: 25%">응답 11 : {{ form.a11 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q12 }}</p></td><td style="width: 25%">응답 12 : {{ form.a12 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q13 }}</p></td><td style="width: 25%">응답 13 : {{ form.a13 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q14 }}</p></td><td style="width: 25%">응답 14 : {{ form.a14 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q15 }}</p></td><td style="width: 25%">응답 15 : {{ form.a15 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q16 }}</p></td><td style="width: 25%">응답 16 : {{ form.a16 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q17 }}</p></td><td style="width: 25%">응답 17 : {{ form.a17 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q18 }}</p></td><td style="width: 25%">응답 18 : {{ form.a18 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q19 }}</p></td><td style="width: 25%">응답 19 : {{ form.a19 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q20 }}</p></td><td style="width: 25%">응답 20 : {{ form.a20 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q21 }}</p></td><td style="width: 25%">응답 21 : {{ form.a21 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q22 }}</p></td><td style="width: 25%">응답 22 : {{ form.a22 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q23 }}</p></td><td style="width: 25%">응답 23 : {{ form.a23 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q24 }}</p></td><td style="width: 25%">응답 24 : {{ form.a24 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q25 }}</p></td><td style="width: 25%">응답 25 : {{ form.a25 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q26 }}</p></td><td style="width: 25%">응답 26 : {{ form.a26 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q27 }}</p></td><td style="width: 25%">응답 27 : {{ form.a27 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q28 }}</p></td><td style="width: 25%">응답 28 : {{ form.a28 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q29 }}</p></td><td style="width: 25%">응답 29 : {{ form.a29 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q30 }}</p></td><td style="width: 25%">응답 30 : {{ form.a30 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q31 }}</p></td><td style="width: 25%">응답 31 : {{ form.a31 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q32 }}</p></td><td style="width: 25%">응답 32 : {{ form.a32 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q33 }}</p></td><td style="width: 25%">응답 33 : {{ form.a33 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q34 }}</p></td><td style="width: 25%">응답 34 : {{ form.a34 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q35 }}</p></td><td style="width: 25%">응답 35 : {{ form.a35 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q36 }}</p></td><td style="width: 25%">응답 36 : {{ form.a36 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q37 }}</p></td><td style="width: 25%">응답 37 : {{ form.a37 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q38 }}</p></td><td style="width: 25%">응답 38 : {{ form.a38 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q39 }}</p></td><td style="width: 25%">응답 39 : {{ form.a39 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q40 }}</p></td><td style="width: 25%">응답 40 : {{ form.a40 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q41 }}</p></td><td style="width: 25%">응답 41 : {{ form.a41 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q42 }}</p></td><td style="width: 25%">응답 42 : {{ form.a42 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q43 }}</p></td><td style="width: 25%">응답 43 : {{ form.a43 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q44 }}</p></td><td style="width: 25%">응답 44 : {{ form.a44 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q45 }}</p></td><td style="width: 25%">응답 45 : {{ form.a45 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q46 }}</p></td><td style="width: 25%">응답 46 : {{ form.a46 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q47 }}</p></td><td style="width: 25%">응답 47 : {{ form.a47 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q48 }}</p></td><td style="width: 25%">응답 48 : {{ form.a48 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q49 }}</p></td><td style="width: 25%">응답 49 : {{ form.a49 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q50 }}</p></td><td style="width: 25%">응답 50 : {{ form.a50 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q51 }}</p></td><td style="width: 25%">응답 51 : {{ form.a51 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q52 }}</p></td><td style="width: 25%">응답 52 : {{ form.a52 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q53 }}</p></td><td style="width: 25%">응답 53 : {{ form.a53 }}</td></tr>
+                </div>
+                <div>
+                    <tr><td><p>{{ item.q54 }}</p></td><td style="width: 25%">응답 54 : {{ form.a54 }}</td></tr>
+                </div>
+            </table>
+        </div>
+        <input type="hidden" name="psytestsheet" id="id_psytestsheet" value="{{ item.id }}">
+        <input type="submit" value="검사완료" class="btn btn-primary"></input>
+    </form>
+    <!-- 뷰 제이에스 cdn -->
+    <!-- 차트 영역 시작-->
+    <div width="30" height="60"><canvas id="chart" ></canvas></div>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+        var totalVar = 0;
+        var var1 = 0; //불안 2, 15, 24, 25, 32, 33, 39, 41, 50
+        var var2 = 0; //우울 7, 9, 14, 20, 26, 27, 28, 42, 52
+        var var3 = 0; //분노 6, 13, 16, 19, 21, 36, 37, 46, 49
+        var var4 = 0; //외상 1, 3, 10, 11, 12, 24, 25, 35, 43, 51
+        var var5 = 0; //해리 5, 11, 18, 29, 30, 31, 38, 45, 48, 53
+        var var6 = 0; //성  4, 8, 17, 22, 23, 34, 40, 44, 47, 54
+
+        var1 = ({{ form.a2 }} + {{ form.a15 }} + {{ form.a24 }} + {{ form.a25 }} + {{ form.a32 }}
+             + {{ form.a33 }} + {{ form.a39 }} + {{ form.a41 }}+ {{ form.a50 }}
+                );
+        var2 = ({{ form.a7 }} + {{ form.a9 }} + {{ form.a14 }} + {{ form.a20 }} + {{ form.a26 }}
+            + {{ form.a27 }} + {{ form.a28 }} + {{ form.a42 }}+ {{ form.a52 }}
+        );
+
+        var3 = ({{ form.a6 }} + {{ form.a13 }} + {{ form.a16 }} + {{ form.a19 }} + {{ form.a21 }}
+            + {{ form.a36 }} + {{ form.a37 }} + {{ form.a46 }}+ {{ form.a49 }}
+        );
+
+        var4 = ({{ form.a1 }} + {{ form.a3 }} + {{ form.a10 }} + {{ form.a11 }} + {{ form.a12 }}
+            + {{ form.a24 }} + {{ form.a25 }} + {{ form.a35 }} + {{ form.a43 }} + {{ form.a51 }}
+        );
+
+        var5 = ({{ form.a5 }} + {{ form.a11 }} + {{ form.a18 }} + {{ form.a29 }} + {{ form.a30 }}
+            + {{ form.a31 }} + {{ form.a38 }} + {{ form.a45 }} + {{ form.a48 }} + {{ form.a53 }}
+        );
+
+        var6 = ({{ form.a4 }} + {{ form.a8 }} + {{ form.a17 }} + {{ form.a22 }} + {{ form.a23 }}
+            + {{ form.a34 }} + {{ form.a40 }} + {{ form.a44 }} + {{ form.a47 }} + {{ form.a54 }}
+        );
+        totalVar = var1+var2+var3+var4+var5+var6;
+
+    </script>
+    <script type="text/javascript">
+        var barChartData = {
+            labels: ["외상증상총점", "불안", "우울", "분노", "외상", "해리", "성"],
+            datasets: [{
+                label: '검사결과',
+                backgroundColor: "#1E90FF",
+                data: [
+                    parseInt(totalVar),
+                    parseInt(var1), //불안
+                    parseInt(var2), //우울
+                    parseInt(var3), //분노
+                    parseInt(var4), //외상
+                    parseInt(var5), //해리
+                    parseInt(var6), //성
+                ]
+            }, {
+                label: '비교',
+                backgroundColor: "#F7464A",
+                data: [
+                    parseInt(totalVar),
+                    parseInt(var1), //불안
+                    parseInt(var2), //우울
+                    parseInt(var3), //분노
+                    parseInt(var4), //외상
+                    parseInt(var5), //해리
+                    parseInt(var6), //성
+                ]
+            }]
+        };
+        window.onload = function() {
+            var ctx = $('#chart').get(0).getContext("2d");
+            window.theChart = new Chart(ctx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+
+                }
+            });
+        }
+    </script>
+    <!-- 차트 영역 끝-->
+
+{% endblock %}
