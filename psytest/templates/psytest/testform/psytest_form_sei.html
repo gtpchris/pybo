@@ -3,10 +3,119 @@
 
 {% block title %}SEI 검사하기{% endblock %}
 {% block content %}
+    <script type="text/javascript">
+    function validateform() {
+        var a1 = document.myform.a1.value;
+        var a2 = document.myform.a2.value;
+        var a3 = document.myform.a3.value;
+        var a4 = document.myform.a4.value;
+        var a5 = document.myform.a5.value;
+        var a6 = document.myform.a6.value;
+        var a7 = document.myform.a7.value;
+        var a8 = document.myform.a8.value;
+        var a9 = document.myform.a9.value;
+        var a10 = document.myform.a10.value;
+        var a11 = document.myform.a11.value;
+        var a12 = document.myform.a12.value;
+        var a12 = document.myform.a12.value;
+        var a14 = document.myform.a14.value;
+        var a15 = document.myform.a15.value;
+        var a15 = document.myform.a16.value;
+        var a17 = document.myform.a17.value;
+        var a18 = document.myform.a18.value;
+        var a19 = document.myform.a19.value;
+        var a20 = document.myform.a20.value;
+        var a21 = document.myform.a21.value;
+        var a22 = document.myform.a22.value;
+        var a23 = document.myform.a23.value;
+        var a24 = document.myform.a24.value;
+        var a25 = document.myform.a25.value;
+
+        if (a1==null||a1=="") {
+            alert ("1번 문항에 응답이 없습니다.");
+            return false;
+        } else if (a2==null||a2=="") {
+            alert ("2번 문항에 응답이 없습니다.");
+            return false;
+        } else if (a3==null||a3=="") {
+            alert ("3번 문항에 응답이 없습니다.");
+            return false;
+        } else if (a4==null||a4=="") {
+            alert ("4번 문항에 응답이 없습니다.");
+            return false;
+        } else if (a5==null||a5=="") {
+            alert ("5번 문항에 응답이 없습니다.");
+            return false;
+        } else if (a6==null||a6=="") {
+            alert ("6번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a7==null||a7=="") {
+            alert ("7번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a8==null||a8=="") {
+            alert ("8번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a9==null||a9=="") {
+            alert ("9번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a10==null||a10=="") {
+            alert ("10번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a11==null||a11=="") {
+            alert ("11번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a12==null||a12=="") {
+            alert ("12번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a13==null||a13=="") {
+            alert ("13번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a14==null||a14=="") {
+            alert ("14번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a15==null||a15=="") {
+            alert ("15번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a16==null||a16=="") {
+            alert ("16번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a17==null||a17=="") {
+            alert ("17번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a18==null||a18=="") {
+            alert ("18번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a19==null||a19=="") {
+            alert ("19번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a20==null||a20=="") {
+            alert ("20번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a21==null||a21=="") {
+            alert ("21번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a22==null||a22=="") {
+            alert ("22번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a23==null||a23=="") {
+            alert ("23번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a24==null||a24=="") {
+            alert ("24번 문항에 응답이 없습니다.");
+            return false;
+        }else if (a25==null||a25=="") {
+            alert("25번 문항에 응답이 없습니다.");
+            return false;
+        }
+       return true;
+    }
+
+    </script>
+
     <!-- test_id = 3 -->
     <h1>SEI 자아존중감 척도</h1>
 
-    <form action="{% url 'psytest:detail' testsheet=item.id %}" method="post" class="my-3">
+    <form name="myform" action="{% url 'psytest:detail' testsheet=item.id %}" method="post" class="my-3" onsubmit="return validateform()">
         {% csrf_token %}
         <div class="container my-3">
             <table class="table">
@@ -152,7 +261,7 @@
             </table>
         </div>
         <input type="hidden" name="psytestsheet" id="id_psytestsheet" value="{{ item.id }}">
-        <input type="submit" value="검사완료" class="btn btn-primary"></input>
+        <input type="submit" id="submit" value="검사완료" class="btn btn-primary"></input>
     </form>
     <!-- 뷰 제이에스 cdn -->
     <!-- 차트 영역 시작-->
@@ -192,9 +301,6 @@
                   +(3 - {{ form.a23 }}));
         calcVar = posiVar + negaVar;
 
-
-    </script>
-    <script type="text/javascript">
         var barChartData = {
             labels: ["자아존중감"],
             datasets: [{
@@ -221,7 +327,7 @@
                 }
             });
         }
+
     </script>
 <!-- 차트 영역 끝-->
-
 {% endblock %}

@@ -8,3 +8,9 @@ SQLscripts
 /db.sqlite3-journal
 inspection
 _mac
+/psytest/migrations/
+/blog/migrations/
+/bookmark/migrations/
+/common/migrations/
+/photo/migrations/
+/pybo/migrations/
