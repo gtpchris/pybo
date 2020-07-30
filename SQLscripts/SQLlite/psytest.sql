@@ -3,10 +3,17 @@
 
 select * from psytest_psytestsheet pp2 
 
-update psytest_psytestsheet set id=4 
-where id=6;
+--update psytest_psytestsheet set id=4 
+--where id=6;
+--commit;
 
+select gender, parent_dc, a199 
+from psytest_psytestanswer pp2 
+ where id = 1
+ 
 select * from psytest_psytestanswer pp 
+ where id = 6;
+
 
 update psytest_psytestsheet 
   set q11_1 = '0) 나는 요즈음 전보다 짜증을 더 내는 편은 아니다.'
